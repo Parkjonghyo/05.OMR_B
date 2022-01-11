@@ -1,5 +1,5 @@
 # 05.OMR_B
-2022 한울 팀프로젝트 OMR 사이트.
+2022 한울 팀프로젝트 OMR 사이트.  
 다른 요구사항 명세서는 root의 미니프로젝트.txt에 명시되어있다.
 
 ## 연동방법
@@ -19,7 +19,6 @@
 5. Clone을 누른다.
 
 ## 기능
-기능추가 ▶ (로그인) 관리자 - 문제(10) 추가 삭제 수정 (시간이 되면..)
 
 회원가입 ▶ 이름, id(중복확인), pw
 
@@ -30,14 +29,18 @@
 
 시험 시간 ▶ 미정
 
-로그인 창 시작 ▶ Login.jsp
+로그인 창 시작 ▶ loginView.jsp
 
 ## DB 테이블 명세
-[table tester] - 응시자
-name, id, pw, result
+[TABLE TESTER] - 응시자
+- name 이름
+- id 아이디 PK
+- pw 비밀번호
 
-[table test] - 시험 문제 번호, 문제, 정답
-no, question, answer
+[TABLE TEST] - 시험
+- no 시험문제번호 PK
+- question 시험문제상세
+- answer 시험문제정답
 
 ## 역할 분배
 - 규형 : DB
@@ -48,8 +51,22 @@ no, question, answer
 
 - 종효 : JSP
 
+## 산출물
+[jsp구조 - oven](https://ovenapp.io/project/D9DqGekZvOWoO6yq1TsInbAJtxWsZgXv#N9TF9)
+
+## 보류된 기능
+- 한 번 시험을 보면 다시는 못 보게 하는 기능
+- 자동로그인 기능
+- 아이디/비밀번호 찾기 기능
+- 회원가입 시 비밀번호 특수문자, 대소문자 섞기 제약주기
+- 고양이나 강아지를 선택했을 시 이전에 본 시험결과 알려주기
+- 왼쪽엔 문제와 번호 / 우측 바에는 omr형식의 번호들만 있도록 하여 서로 연동시키기.
+- 처음부터 다시 풀기 기능
+- 틀린 문제만 다시 풀기 기능
+
 ## 참고된 웹사이트
- [github데탑 이클립스 연동](https://itisenjoyable.tistory.com/72)  
- [Github-Desktop으로-협업하기](https://velog.io/@c-on/Github-Desktop%EC%9C%BC%EB%A1%9C-%ED%98%91%EC%97%85%ED%95%98%EA%B8%B0)  
- [좋은 git 커밋 메시지를 작성하기 위한 7가지 약속](https://meetup.toast.com/posts/106)  
-[깃허브데스크탑 협업방법](https://c-on.tistory.com/18)
+[github데탑 이클립스 연동](https://itisenjoyable.tistory.com/72)  
+[Github-Desktop으로-협업하기](https://velog.io/@c-on/Github-Desktop%EC%9C%BC%EB%A1%9C-%ED%98%91%EC%97%85%ED%95%98%EA%B8%B0)  
+[좋은 git 커밋 메시지를 작성하기 위한 7가지 약속](https://meetup.toast.com/posts/106)  
+[깃허브데스크탑 협업방법](https://c-on.tistory.com/18)  
+[[Oracle DB] 오라클 auto_increment (시퀀스)](https://luji.tistory.com/71)
