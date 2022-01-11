@@ -3,7 +3,7 @@ DROP TABLE member;
 ----------------------------------------------------------------------------------------------------
 --1. 입력테이블 : 회원관리테이블 생성, 반드시 제약조건명 지정 후 테이블 구조 확인(CONSTRAINT  제약조건명 제약조건)
 --                                     ￣￣￣￣￣￣￣￣￣￣￣ 
-create table member(
+create table member_B(
 ID varchar2(50) constraint member_id_pk primary key,
 PASSWORD VARCHAR2(50) constraint member_pssword_nn not null,
 NAME VARCHAR2(20) constraint member_name_nn not null,
@@ -11,21 +11,23 @@ PHONE VARCHAR2(13),
 EMAIL VARCHAR2(50),
 JOINDATE DATE constraint member_joindate_nn not null
 );
-create table tester(
+create table tester_B(
 NAME varchar2(50) constraint tester_name_nn not null,
 ID varchar2(50) constraint tester_id_pk primary key,
 PW VARCHAR2(50) constraint tester_pssword_nn not null,
 result varchar2(10) constraint tester_result_nn not null
 );
 desc tester;
-drop table tester;
+drop table tester_b;
+drop table member_b;
+
 select * from tester;
 COMMIT;
 desc member
 select *
 from test;
 
-create table test(
+create table test_B(
 NO varchar2(50) constraint test_no_nn not null,
 question varchar2(2000) constraint test_question_pk primary key,
 ANSWER VARCHAR2(50) constraint tester_answer_nn not null
