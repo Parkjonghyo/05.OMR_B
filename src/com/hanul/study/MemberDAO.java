@@ -86,30 +86,22 @@ public class MemberDAO {
 		return false;
 	}
 	
-	public ArrayList<String> makeIdList(){ //DB에 있는 회원 아이디를 리스트에 저장
+	public boolean checkIdValid(String id) { //아이디 중복검사
 		conn = getConn();
 		String sql = "select id from tester_b";
-		ArrayList<String> list = new ArrayList<>();
 		try {
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				list.add(rs.getString("id"));
+				if(rs.getString("id").equals(id)) {
+					return false;
+				}
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
-			System.out.println("makeIdList() Exception!");
+			System.out.println("checkIdValid() Exception!");
 		}finally {
 			dbClose();
-		}
-		return list;
-	}
-	
-	public boolean checkIdValid(ArrayList<String> list, String id) { //makeIdList()에서 저장한 리스트에 있는 아이디인지 확인(중복검사)
-		for(int i=0; i<list.size(); i++) {
-			if(id.equals(list.get(i))) {
-				return false;
-			}
 		}
 		return true;
 	}

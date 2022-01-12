@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-public class questionDAO {
+public class QuestionDAO {
 	private Connection conn;
 	private PreparedStatement ps;
 	private ResultSet rs;
