@@ -1,3 +1,4 @@
+<%@page import="com.hanul.study.MemberDAO"%>
 <%@page import="com.hanul.study.TesterDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -18,7 +19,7 @@ if(dao.checkIdValid(id)){
 }
 
 out.println("<script>");
-out.println("alert('"+ succ ? "회원가입 성공!" : "회원가입 실패" + "');");
+out.println("alert('"+ (succ ? "회원가입 성공!" : "회원가입 실패") + "');");
 out.println("</script>");
 response.sendRedirect(succ ? "loginView.jsp" : "joinView.jsp");
 %>

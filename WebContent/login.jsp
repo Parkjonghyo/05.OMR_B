@@ -1,3 +1,4 @@
+<%@page import="com.hanul.study.MemberDAO"%>
 <%@page import="com.hanul.study.TesterDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
