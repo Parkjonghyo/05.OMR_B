@@ -12,7 +12,10 @@ TesterDTO currUserData = dao.login(id, pw);
 session.setAttribute("currUserData", currUserData);
 
 out.println("<script>");
-out.println("alert('"+ currUserData == null ? "로그인 성공!" : "로그인 실패" + "');");
+out.println("window.onload = () => {");
+out.println("alert('" + (currUserData == null ? "로그인 실패!" : "로그인 성공") + "');");
+out.println("window.location.href = '" + (currUserData == null ? "loginView.jsp" : "selectTestView.jsp") + "'");
+out.println("}");
 out.println("</script>");
-response.sendRedirect(currUserData == null ? "loginView.jsp" : "selectTestView.jsp");
+
 %>
