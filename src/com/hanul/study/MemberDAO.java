@@ -39,7 +39,7 @@ public class MemberDAO {
 		}
 	}
 	
-	public TesterDTO login(String id, String pw) { //select
+	public TesterDTO login(String id, String pw) { //로그인 확인
 		conn = getConn();
 		String sql = "select * from tester_b where id=?, pw=?";
 		TesterDTO dto = new TesterDTO();
@@ -53,6 +53,7 @@ public class MemberDAO {
 				dto.setName(rs.getString("name"));
 				dto.setId(rs.getString("id"));
 				dto.setPw(rs.getString("pw"));
+				return dto;
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -60,10 +61,10 @@ public class MemberDAO {
 		}finally {
 			dbClose();
 		}
-		return dto;
+		return null;
 	}
 	
-	public boolean join(TesterDTO dto) { //insert
+	public boolean join(TesterDTO dto) { //회원가입
 		conn = getConn();
 		String sql = "insert into tester_b values name=?, id=?, pw=?";
 		int succ=0;
@@ -84,7 +85,8 @@ public class MemberDAO {
 		}
 		return false;
 	}
-	public ArrayList<String> makeIdList(){
+	
+	public ArrayList<String> makeIdList(){ //DB에 있는 회원 아이디를 리스트에 저장
 		conn = getConn();
 		String sql = "select id from tester_b";
 		ArrayList<String> list = new ArrayList<>();
@@ -103,12 +105,12 @@ public class MemberDAO {
 		return list;
 	}
 	
-	public boolean checkIdValid(ArrayList<String> list, String id) {
+	public boolean checkIdValid(ArrayList<String> list, String id) { //makeIdList()에서 저장한 리스트에 있는 아이디인지 확인(중복검사)
 		for(int i=0; i<list.size(); i++) {
 			if(id.equals(list.get(i))) {
-				return true;
+				return false;
 			}
 		}
-		return false;
+		return true;
 	}
 }

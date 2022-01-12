@@ -4,16 +4,18 @@ public class TestDTO {
 	private String no 		;
 	private String question	;
 	private String answer	;
+	private int subno		;
 	
 	
 	public TestDTO () {}
 
 
-	public TestDTO(String no, String question, String answer) {
+	public TestDTO(String no, String question, String answer, int subno) {
 		super();
 		this.no = no;
 		this.question = question;
 		this.answer = answer;
+		this.subno = subno;
 	}
 
 
@@ -47,6 +49,11 @@ public class TestDTO {
 	};
 	
 	
+	public int getSubNo() {
+		return subno;
+	}
 	
-	
+	public void setSubNo(int subno) {
+		this.subno = subno;
+	}
 }
