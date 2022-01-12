@@ -1,3 +1,4 @@
+<%@page import="com.hanul.study.TesterDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -5,7 +6,7 @@ request.setCharacterEncoding("utf-8");
 String id = request.getParameter("id");
 String pw = request.getParameter("pw");
 
-TesterDAO dao = new TesterDAO();
+MemberDAO dao = new MemberDAO();
 TesterDTO currUserData = dao.login(id, pw);
 session.setAttribute("currUserData", currUserData);
 

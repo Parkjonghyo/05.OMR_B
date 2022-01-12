@@ -6,8 +6,9 @@ PW VARCHAR2(50) constraint tester_pssword_nn not null
 create table test_b(
 NO varchar2(50) constraint test_no_nn primary key,
 question varchar2(2000) constraint test_question_pk not null,
-ANSWER VARCHAR2(50) constraint tester_answer_nn not null
+ANSWER VARCHAR2(50) constraint test_answer_nn not null
 );
+
 
 desc tester;
 drop table test_B;
@@ -28,13 +29,6 @@ CYCLE NOCACHE;
 
 commit;
 
-
-
-
-
-
-
-
 INSERT INTO test_b 
 VALUES(Test_seq.NEXTVAL,'문제','2');
 
@@ -51,12 +45,10 @@ select * from test_b;
 
 
 
-
-
-
-
-
-
+ALTER TABLE test_b
+ADD subno number(10) constraint test_subno_nn not null ;
+commit;
+select * from test_b;
 
 
 

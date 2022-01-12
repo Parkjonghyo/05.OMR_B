@@ -1,3 +1,4 @@
+<%@page import="com.hanul.study.TesterDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -6,7 +7,7 @@ String id = request.getParameter("id");
 String pw = request.getParameter("pw");
 String name = request.getParameter("name");
 
-TesterDAO dao = new TesterDAO();
+MemberDAO dao = new MemberDAO();
 TesterDTO dto = new TesterDTO();
 boolean succ = false;
 dto.setId(id);
