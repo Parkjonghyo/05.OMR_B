@@ -4,7 +4,7 @@
 request.setCharacterEncoding("utf-8");
 String id = request.getParameter("id");
 
-TesterDAO dao = new TesterDAO();
+MemberDAO dao = new MemberDAO();
 boolean isIdVal = dao.checkIdValid(id);
 
 out.println("<script>");
