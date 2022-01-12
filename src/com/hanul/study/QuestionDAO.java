@@ -41,7 +41,7 @@ public class QuestionDAO {
 	
 	public ArrayList<TestDTO> selectAll(int subno){ //DB에 저장된 모든 값(문제유형 판별 번호 제외)을 리스트로 저장
 		conn = getConn();
-		String sql = "select no, question, answer from test_b where subno=?";
+		String sql = "select no, question, answer from test_b where subno=? order by dbms_random.value";
 		ArrayList<TestDTO> list = new ArrayList<>();
 		try {
 			TestDTO dto = new TestDTO();
@@ -66,7 +66,7 @@ public class QuestionDAO {
 	
 	public ArrayList<String> selectAllQuestion(int subno){ //문제만 리스트로 저장
 		conn = getConn();
-		String sql = "select question from test_b where subno=?";
+		String sql = "select question from test_b where subno=? order by dbms_random.value";
 		ArrayList<String> list = new ArrayList<>();
 		try {
 			ps = conn.prepareStatement(sql);
