@@ -16,7 +16,7 @@
 				<input type="text" name="id" placeholder="Admin Id" required="required">
 				<input type="password" name="pw" placeholder="Password" required="required"><br>
 				<button type="submit">LOGIN</button>
-				<button onclick="location.href='joinView.jsp'">JOIN</button>
+				<button type="button" onclick="location.href='joinView.jsp'">JOIN</button>
 			</form>
 		</div>
 	<div class="image">

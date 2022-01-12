@@ -19,7 +19,10 @@ if(dao.checkIdValid(id)){
 }
 
 out.println("<script>");
+out.println("window.onload = () => {");
 out.println("alert('"+ (succ ? "회원가입 성공!" : "회원가입 실패") + "');");
+out.println("window.location.href = '" + (succ ? "loginView.jsp" : "joinView.jsp") + "'");
+out.println("}");
 out.println("</script>");
-response.sendRedirect(succ ? "loginView.jsp" : "joinView.jsp");
+
 %>
