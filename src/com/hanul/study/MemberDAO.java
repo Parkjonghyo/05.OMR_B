@@ -41,7 +41,7 @@ public class MemberDAO {
 	
 	public TesterDTO login(String id, String pw) { //로그인 확인
 		conn = getConn();
-		String sql = "select * from tester_b where id=?, pw=?";
+		String sql = "select * from tester_b where id=? and pw=?";
 		TesterDTO dto = new TesterDTO();
 		try {
 			ps = conn.prepareStatement(sql);
@@ -66,7 +66,7 @@ public class MemberDAO {
 	
 	public boolean join(TesterDTO dto) { //회원가입
 		conn = getConn();
-		String sql = "insert into tester_b values name=?, id=?, pw=?";
+		String sql = "insert into tester_b values (?,?,?)";
 		int succ=0;
 		try {
 			ps = conn.prepareStatement(sql);

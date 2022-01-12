@@ -56,6 +56,10 @@ body{
 	padding: 5px 12px;
 	font-weight: 500;
 }
+.container .myform button:hover{
+	background-color: #9854FF;
+	cursor: pointer;
+}
 /* 이미지 크기 */
 .image img{
 	width: 300px;
