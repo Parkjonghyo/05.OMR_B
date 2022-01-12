@@ -53,6 +53,7 @@
 
 ## 산출물
 [jsp구조 - oven](https://ovenapp.io/project/D9DqGekZvOWoO6yq1TsInbAJtxWsZgXv#N9TF9)
+[수빈](https://www.figma.com/file/cni9973g9Uk9KrWEzM4Kzt/Untitled?node-id=0%3A1)
 
 ## 보류된 기능
 - 한 번 시험을 보면 다시는 못 보게 하는 기능
