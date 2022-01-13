@@ -39,9 +39,9 @@ public class QuestionDAO {
 		}
 	}
 	
-	public ArrayList<TestDTO> selectAll(int subno){ //DB에 저장된 모든 값(문제유형 판별 번호 제외)을 리스트로 저장
+	public ArrayList<TestDTO> selectAll(int subno){ //DB에 저장된 모든 값을 리스트로 저장
 		conn = getConn();
-		String sql = "select no, question, answer from test_b where subno=? order by dbms_random.value";
+		String sql = "select * from test_b where subno=? order by dbms_random.value";
 		ArrayList<TestDTO> list = new ArrayList<>();
 		try {
 			TestDTO dto = new TestDTO();
@@ -52,32 +52,16 @@ public class QuestionDAO {
 				dto.setNo(rs.getString("no"));
 				dto.setQuestion(rs.getString("question"));
 				dto.setAnswer(rs.getString("answer"));
-				dto.setSubNo(rs.getInt("subno"));
+				dto.setSubno(rs.getInt("subno"));
+				dto.setView1(rs.getString("view1"));
+				dto.setView2(rs.getString("view2"));
+				dto.setView3(rs.getString("view3"));
+				dto.setView4(rs.getString("view4"));
 				list.add(dto);
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
 			System.out.println("selectAll() Exception!");
-		}finally {
-			dbClose();
-		}
-		return list;
-	}
-	
-	public ArrayList<String> selectAllQuestion(int subno){ //문제만 리스트로 저장
-		conn = getConn();
-		String sql = "select question from test_b where subno=? order by dbms_random.value";
-		ArrayList<String> list = new ArrayList<>();
-		try {
-			ps = conn.prepareStatement(sql);
-			ps.setInt(1, subno);
-			rs = ps.executeQuery();
-			while(rs.next()) {
-				list.add(rs.getString("question"));
-			}
-		}catch(Exception e) {
-			e.printStackTrace();
-			System.out.println("selectAllQuestion() Exception!");
 		}finally {
 			dbClose();
 		}
