@@ -11,19 +11,19 @@
 <div class="container">
 	<div class="card-box">
 		<a href="selectTest.jsp?subNo=1"> 
-			<img src="images/cat-q.jpg" alt="고양이">
+			<img src="images/cat-quiz.jpg" alt="고양이">
 		</a>
 		<div class="text-wrap">
 			<h1>Cat-Quiz</h1>
-			<p>Cat Problem Solving, How To Be A Cat Detective</p>
+			
 		</div>
 	</div>
 	<div class="card-box">
-		<div class="gradient"></div>
-		<img src="images/cat-q.jpg" alt="고양이">
+		<a href="selectTest.jsp?subNo=2">
+		<img src="images/dog-quiz.jpg" alt="강아지">
+		</a>
 		<div class="text-wrap">
-			<h1>Cat-Quiz</h1>
-			<p>Cat Problem Solving, How To Be A Cat Detective</p>
+			<h1>Dog-Quiz</h1>
 		</div>
 	</div>
 </div>
