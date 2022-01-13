@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+#header{
+    height: 100px;
+    /* background: #ece6cc; */
+}
+#main{
+    width: 80%;
+    height: 500px;
+    float: left;
+}
+#section{
+    width: 20%;
+    height: 500px;
+    text-align: left;
+    float: left;
+    /* background: lime; */
+}
+#footer{
+    height: 100px;
+    clear: both;
+    /* background: orange; */
+}
+
+#mainLeft{
+	width: 50%;
+	height: 500px;
+	/* background: yellow; */
+	float: left;
+}
+
+#mainRight{
+	width: 50%;
+	height: 500px;
+	/* background: coral; */
+	float: left;
+}
+
+h3{
+    text-align: center;
+}
+
+table{
+	width: 100%;
+}
+
+th, td{
+	text-align: center;
+}
