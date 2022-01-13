@@ -10,11 +10,12 @@
 </head>
 <body>
 	<div class="container">
-		<div class="myform">
+		<div class="myform"> 
 			<form action="join.jsp" method="post">
 				<h2>WELCOME!</h2>
 				<input type="text" name="name" placeholder="Name" required="required">
 				<input type="text" name="id" placeholder="Admin Id" required="required">
+				<button type="button" class="btn_chek" onclick="location.href='checkIdValid.jsp'">중복확인</button>
 				<input type="password" name="pw" placeholder="Password" required="required"><br>
 				<button type="submit">JOIN</button>
 				<button type="button" onclick="location.href='loginView.jsp'">MAIN</button> 
