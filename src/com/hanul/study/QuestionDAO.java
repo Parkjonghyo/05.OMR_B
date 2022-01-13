@@ -44,11 +44,11 @@ public class QuestionDAO {
 		String sql = "select * from test_b where subno=? order by dbms_random.value";
 		ArrayList<TestDTO> list = new ArrayList<>();
 		try {
-			TestDTO dto = new TestDTO();
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, subno);
 			rs = ps.executeQuery();
 			while(rs.next()) {
+				TestDTO dto = new TestDTO();
 				dto.setNo(rs.getString("no"));
 				dto.setQuestion(rs.getString("question"));
 				dto.setAnswer(rs.getString("answer"));
