@@ -1,19 +1,30 @@
+<%@page import="com.hanul.study.TestDTO"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 request.setCharacterEncoding("utf-8");
-String a1 = request.getParameter("chose0_omr");
-String a2 = request.getParameter("chose1_omr");
-String a3 = request.getParameter("chose2_omr");
+ArrayList<String> answers = new ArrayList<>();
+ArrayList<TestDTO> tests = (ArrayList<TestDTO>) session.getAttribute("tests");
+
+// 날아온 정답들 전부 받아낸다!!!!
+for(int i = 0; i < tests.size(); i++) {
+	answers.add(request.getParameter("chose" + i + "_omr"));
+}
+
+for(String a : answers){
+	System.out.println("a: " + a);
+}
+
+for(TestDTO b : tests){
+	System.out.println("b: " + b.getAnswer());
+}
+
+// 비지니스로직 : 비교하는 것.
+boolean[] isCorrect = new boolean[10];
+
+for(int i = 0;i<tests.size(); i++){
+	isCorrect[i] = answers.get(i).equals(tests.get(i).getAnswer());
+	System.out.println(isCorrect[i]);
+}
+
 %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<h3><%=a1 %></h3><br>
-<h3><%=a2 %></h3><br>
-<h3><%=a3 %></h3><br>
-</body>
-</html>
