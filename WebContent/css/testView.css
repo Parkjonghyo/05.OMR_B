@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+body{
+	background: #c9c9c9;
+	position: relative;
+}
+
+#header{
+    height: 150px;
+}
+#main{
+    width: 75%;
+    height: 500px;
+    float: left;
+    /* column-count: 2;
+	column-rule: 2px dotted gray; */
+	/* text-align: justify; */
+	background: #fff;
+	margin-right: 2%;
+	overflow-y: scroll;
+	margin-left: 1.5%;
+}
+/* #main h3{
+	break-before: column;
+	margin: auto;
+} */
+#mainLeft{
+	width: 47%;
+	padding: 10px;
+	/* background: yellow; */
+	float: left;
+	border-right: 2px dotted gray;
+}
+
+#mainRight{
+	width: 46%;
+	padding: 10px;
+	/* background: coral; */
+	float: left;
+}
+
+#section{
+    width: 20%;
+    height: 500px;
+    text-align: left;
+    float: left;
+    background: #fff;
+    margin-right: 1.5%;
+}
+#footer{
+    height: 100px;
+    clear: both;
+}
+
+h3{
+    text-align: center;
+}
+
+#timer{
+	text-align: right;
+}
+
+table{
+	width: 100%;
+}
+
+tr{
+	text-align: center;
+}
+
+.subBtn{
+	/* position: absolute; */
+	vertical-align: bottom;
+	text-align: right;
+}
+
+.inputBtn{
+	height: 40px;
+	width: 60px;
+}
