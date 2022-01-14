@@ -1,6 +1,8 @@
 package com.hanul.study;
 
-public class TestDTO {
+import java.io.Serializable;
+
+public class TestDTO implements Serializable{
 	private String no 		;
 	private String question	;
 	private String answer	;

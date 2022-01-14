@@ -30,5 +30,5 @@ VALUES(Test_seq.NEXTVAL,'문제','2','2','보기1~~~','보기2~~~','보기3~~~',
 
 select * from test_b;       
 truncate table test_b;
-drop sequence test_seq;
+	drop sequence test_seq;
 

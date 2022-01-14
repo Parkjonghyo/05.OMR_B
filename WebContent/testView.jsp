@@ -26,6 +26,7 @@
 <title>test omr</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/testView.css">
+<link rel="icon" href="images/Bicon.ico" type="image/x-icon" sizes="16x16">
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
