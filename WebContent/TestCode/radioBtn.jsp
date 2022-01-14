@@ -24,6 +24,8 @@ input[type=radio] {
 	<input type="radio" name="chk_info_omr" value="2">
 	<input type="radio" name="chk_info_omr" value="3">
 	<input type="radio" name="chk_info_omr" value="4">
+	
+	<button type="button" id="POST" value="post" > 말 안된다 증말 </button>
 </body>
 <script type="text/javascript">
 	
@@ -42,6 +44,18 @@ input[type=radio] {
 				console.log(delOmrName);
 				$('input[name="' + delOmrName + '"]').val([value]);
 			}
+		})
+		
+		getAllChecks = () => {
+			
+		}
+		
+		$('#POST').on('click', () => {
+			console.log("클릭했음")
+			var intArray = ['1', '2', '3', '4']
+			$.post("testPost.jsp", {
+				"int[]" : intArray 
+			})
 		})
 		
 		/* $('input[name="chk_info"]').change(function() {

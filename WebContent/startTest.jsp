@@ -10,7 +10,11 @@ Integer subNo = (Integer) request.getAttribute("subNo");
 QuestionDAO dao = new QuestionDAO();
 ArrayList<TestDTO> tests = dao.selectAll(subNo);
 
-request.setAttribute("tests", tests);
+for(TestDTO dto : tests){
+	System.out.println(dto.getQuestion());
+}
+
+session.setAttribute("tests", tests);
 RequestDispatcher rd = request.getRequestDispatcher("testView.jsp");
 rd.forward(request, response);
 
