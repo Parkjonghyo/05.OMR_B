@@ -11,20 +11,26 @@ for(int i = 0; i < tests.size(); i++) {
 	answers.add(request.getParameter("chose" + i + "_omr"));
 }
 
-for(String a : answers){
+// 테스트 코드(받은 정답 & 테스트의 정답)
+/* for(String a : answers){
 	System.out.println("a: " + a);
 }
 
 for(TestDTO b : tests){
 	System.out.println("b: " + b.getAnswer());
-}
+} */
+
+
 
 // 비지니스로직 : 비교하는 것.
-boolean[] isCorrect = new boolean[10];
+ArrayList<Boolean> isCorrect = new ArrayList<>();
+
 
 for(int i = 0;i<tests.size(); i++){
-	isCorrect[i] = answers.get(i).equals(tests.get(i).getAnswer());
-	System.out.println(isCorrect[i]);
+	isCorrect.add(answers.get(i).equals(tests.get(i).getAnswer()));
 }
+
+
+
 
 %>
