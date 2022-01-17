@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body{
-	background: #c9c9c9;
+	background: #e8edf2;
 	position: relative;
 }
 
@@ -58,6 +58,7 @@ h3{
 
 #timer{
 	text-align: right;
+	margin-right: 27px;
 }
 
 table{
@@ -69,12 +70,13 @@ tr{
 }
 
 .subBtn{
-	/* position: absolute; */
-	vertical-align: bottom;
-	text-align: right;
+	display: flex;
+	justify-content: right;
+	margin-top: 20px;
 }
 
 .inputBtn{
 	height: 40px;
 	width: 60px;
+	margin-right: 27px;
 }

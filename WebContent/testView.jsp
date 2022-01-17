@@ -30,7 +30,7 @@
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
-	<form action="result.jsp" method="post" onsubmit="return fnSubmit()" name="sheet">
+	<form action="result.jsp" method="post" onsubmit="return fnSubmit()" onreset="return fnReset()" name="sheet">
 	<div id="header">
 		<h3>[
 		<%if(list.get(0).getSubno()==1){ %>
@@ -38,10 +38,12 @@
 		<%}else{ %>
 			강아지
 		<%} %>
-		]</h3>
+		]</h3> 
 		<div id="timer"></div>
 		<div class="subBtn">
 			<input type="submit" value="제출" class="inputBtn">
+			<br>
+			<input type="reset" value="초기화" class="inputBtn">
 		</div>
 	</div>
 	<div id="main">
@@ -91,6 +93,10 @@
 	<div id="footer">
 	</div>
 	<script>
+	$(document).ready(function(){
+		alert("시험을 시작합니다");
+	})
+	
 		$().ready(function() {
 			$('input[type="radio"]').change(function() {
 				var name = $(this).attr('name'); 
@@ -108,11 +114,32 @@
 			})
 		})
 		
+		function noRefresh() 
+		{
+			if(event.keyCode == 116) {
+				alert("새로고침 할 수 없습니다");
+				return false;
+			}else if(event.keyCode == 8) {
+				alert("뒤로가기를 할 수 없습니다.");
+				return false;
+			}
+		}
+		document.onkeydown = noRefresh;
+		
 		function fnSubmit() {
 			if (confirm("답안을 제출하시겠습니까?")) {
 				return true;
 			}
 			return false;
+		}
+		
+		function fnReset() {
+			if(confirm("답안을 초기화 하시겠습니까?\n입력값이 사라집니다.")) {
+				return true;
+			}else {
+				alert("취소되었습니다.");
+				return false;
+			}
 		}
 		
 		var SetTime = 3600;
@@ -129,6 +156,7 @@
 		window.onload = function TimerStart() {
 			tid = setInterval('last_time()', 1000)
 		};
+		
 	</script>
 </body>
 </html>

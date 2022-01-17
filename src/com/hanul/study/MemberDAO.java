@@ -93,7 +93,7 @@ public class MemberDAO {
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				if(rs.getString("id").equals(id)) {
+				if(rs.getString("id").equals(id) || id.equals("")) {
 					return false;
 				}
 			}

@@ -8,7 +8,6 @@ img{
 	height: 360px;
 }
 .card-box{
-	display: inline-block;
 	overflow: hidden;
 	margin: 16px; 
 	position: relative;
@@ -22,17 +21,22 @@ img{
 .text-wrap{
 	position: absolute;
 	bottom: 0;
-	padding: 24px;
-	z-index: 2;
-	text-align: left;
+	padding: 24px; 
+	
+	
 }
+
 .text-wrap h1{
 	color:#000;
 }
 .container{
-	text-align: center;
-	margin-top: 260px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
 }
 .card-box:hover{
 	transform: scale(0.95);
+	
 }
