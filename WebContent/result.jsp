@@ -30,9 +30,7 @@ for(int i = 0;i<tests.size(); i++){
 	isCorrect.add(answers.get(i).equals(tests.get(i).getAnswer()));
 }
 
-request.setAttribute("isCorrList", isCorrect);
-request.setAttribute("answers", answers);
-RequestDispatcher rd = request.getRequestDispatcher("resultView.jsp");
-rd.forward(request, response);
+
+
 
 %>
