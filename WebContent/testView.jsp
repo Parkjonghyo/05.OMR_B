@@ -94,6 +94,10 @@ request.setCharacterEncoding("utf-8");
 	</div>
 	</form>
 	<div id="footer">
+		<div class="banner">
+			<img src="images/banner.jpg" width="1000px" height="200px">
+			<span class="text">배너에 글씨 반응</span>
+		</div>
 	</div>
 	<script>
 	
