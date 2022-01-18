@@ -4,6 +4,8 @@
 request.setCharacterEncoding("utf-8");
 String[] posts = request.getParameterValues("int[]");
 
+
+
 for(String post:posts){
 	System.out.println(post);	
 }

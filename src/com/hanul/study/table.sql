@@ -13,22 +13,27 @@ view2 varchar2(500) constraint test_view2_nn not null,
 view3 varchar2(500) constraint test_view3_nn not null,
 view4 varchar2(500) constraint test_view4_nn not null
 );
-
-
-commit;
-
 CREATE SEQUENCE test_seq    --시퀀스
 START WITH 1 
 INCREMENT BY 1 
 MAXVALUE 40000 
 CYCLE NOCACHE;
 
+-- 위쪽은 DB 기본설정들.
 
-INSERT INTO test_b          --insert
+--insert 견본
+
+INSERT INTO test_b         
 VALUES(Test_seq.NEXTVAL,'문제','2','2','보기1~~~','보기2~~~','보기3~~~','보기4~~~');
 
 
-select * from test_b;       
-truncate table test_b;
-	drop sequence test_seq;
+-- 초기화를 위한 모든 테이블 드랍
+drop table test_b;
+drop table tester_b;
+drop sequence test_seq;
 
+-- 테이블 내의 값만 초기화       
+truncate table test_b;
+	
+rollback;
+commit;

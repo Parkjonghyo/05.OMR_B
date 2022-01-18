@@ -1,12 +1,15 @@
+<%@page import="com.hanul.study.TesterDTO"%>
 <%@page import="com.hanul.study.QuestionDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.hanul.study.TestDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
+request.setCharacterEncoding("utf-8");
 	QuestionDAO dao = new QuestionDAO();
 	TestDTO dto = new TestDTO();
 	ArrayList<TestDTO> list = (ArrayList<TestDTO>) session.getAttribute("tests");
+	TesterDTO userDto = (TesterDTO) session.getAttribute("currUserData");
 	
 	String[] radioName = new String[list.size()];
 	for(int i=0; i<list.size(); i++){
@@ -93,8 +96,18 @@
 	<div id="footer">
 	</div>
 	<script>
+	
 	$(document).ready(function(){
-		alert("시험을 시작합니다");
+		<%
+		//만약 유저가 로그인되어있지 않다면 login페이지로 가도록
+		if(userDto == null){
+			out.println("alert('로그인 후에 이용해주세요')");  
+			out.println("location.href='loginView.jsp'");
+			// 위의 href 경로는 알아서 맞춰주시길.
+		}else {
+			out.println("alert('시험을 시작합니다.')");  
+		}
+		%>
 	})
 	
 		$().ready(function() {
