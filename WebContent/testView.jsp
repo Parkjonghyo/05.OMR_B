@@ -37,12 +37,13 @@ request.setCharacterEncoding("utf-8");
 	<div id="header">
 		<h3>[
 		<%if(list.get(0).getSubno()==1){ %>
-			고양이
-		<%}else{ %>
 			강아지
+		<%}else{ %>
+			고양이
 		<%} %>
 		]</h3> 
 		<div id="timer"></div>
+		<h4 class="username">수험자:<%=userDto.getName() %></h4>
 		<div class="subBtn">
 			<input type="submit" value="제출" class="inputBtn">
 			<br>
@@ -95,8 +96,9 @@ request.setCharacterEncoding("utf-8");
 	</form>
 	<div id="footer">
 		<div class="banner">
+			<div class="gra"></div>
 			<img src="images/banner.jpg" width="1000px" height="200px">
-			<span class="text">배너에 글씨 반응</span>
+			<span class="text">OMR_B조 입니다.</span>
 		</div>
 	</div>
 	<script>
