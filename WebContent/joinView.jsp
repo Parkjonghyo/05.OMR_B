@@ -20,8 +20,9 @@
 				<input type="text" name="name" placeholder="Name" required="required">
 				<input type="text" id="id" name="id" placeholder="Admin Id" required="required">
 				<button type="button" class="btn_chek" onclick="checkIdValid()">중복확인</button>
-				<input type="password" name="pw" placeholder="Password" required="required"><br>
-				<button type="submit">JOIN</button>
+				<input type="password" name="pw" id="pw" placeholder="Password" required="required">
+				<div class="check_font" id="pw_check"></div><br>
+				<button type="submit" id="submit">JOIN</button>
 				<button type="button" onclick="location.href='loginView.jsp'">MAIN</button> 
 			</form>
 		</div>
@@ -33,6 +34,19 @@
 		checkIdValid = () => {
 			location.href=`checkIdValid.jsp?id=\${$("#id").val()}`;
 		}
+		
+		var pwCheck = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+		$("#pw").blur(function(){
+			if(pwCheck.test($("#pw").val())){
+				$("#pw_check").text("");
+				$("#submit").removeAttr("disabled");
+			}else{
+				$("#pw_check").text('특수문자, 대문자, 소문자, 숫자 1개 이상 포함!');
+				$("#pw_check").css("color", "red");
+				$("#pw_check").css("font-size", "12px");
+				$("#submit").attr("disabled", "disabled");
+			}
+		})
 	</script>
 </body>
 </html>
