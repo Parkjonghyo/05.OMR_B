@@ -70,4 +70,5 @@
 [Github-Desktop으로-협업하기](https://velog.io/@c-on/Github-Desktop%EC%9C%BC%EB%A1%9C-%ED%98%91%EC%97%85%ED%95%98%EA%B8%B0)  
 [좋은 git 커밋 메시지를 작성하기 위한 7가지 약속](https://meetup.toast.com/posts/106)  
 [깃허브데스크탑 협업방법](https://c-on.tistory.com/18)  
-[[Oracle DB] 오라클 auto_increment (시퀀스)](https://luji.tistory.com/71)
+[[Oracle DB] 오라클 auto_increment (시퀀스)](https://luji.tistory.com/71)  
+[폼 필드 input type="radio" 디자인(CSS) 변경 하기](https://ingijjung.tistory.com/12)
