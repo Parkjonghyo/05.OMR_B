@@ -12,51 +12,109 @@ body{
 #header{
     height: 150px;
 }
+
+h3{
+    text-align: center;
+    margin-top: 30px;
+}
+
 #main{
-   position: relative;
-	top : 163px;
-	left: 245px;
-	margin-top: 50px;
-	width: 70%;
+   display: flex;
+	width: 1200px;
+	
 }
 
 #mainLeft{
-	position: absolute;
-    left: 50%;
-    transform: translate(-160%, -54%);
     padding: 10px;
     background:#fff;
-    top: 50%;
-   	width: 415px;
-   	height: 570px;
 }
 
 #mainRight{
-	position: absolute;
-    top: 40%;
     padding: 10px;
     background:#fff;
-    left: 50%;
-    transform: translate(-50%, -54%);
-    height: 570px;
-    width: 500px;
     
 }
 
-#section{
-  position: relative;
-    width: 10%;
-    left: 70%;
-    height: 49vh;
-    bottom: 23px;
-    background: #fff;
+#MainWrapper{
+	display:flex;
+	
 }
+
+#aside{
+	width:160px;
+}
+
+#omr_form{
+  position: relative;
+  height: 400px;
+  background: #fff;
+}
+
+#omr_form > table {
+	height:400px;
+}
+
+
+#timer{
+	text-align: right;
+}
+
+
+.subBtn{
+	display: flex;
+	justify-content: right;
+}
+
+input[type="radio"]{
+  display:none;
+}
+
+label {
+	position:relative;
+}
+
+.radio_check  {
+	display:none;
+}
+
+input[type="radio"]:checked + .radio_check  {
+	display:inline;
+	position:absolute;
+	color: red;
+	left:2px;
+}
+
+table{
+	height: 47vh;
+    width: 90%; 
+}
+
+tr{
+	text-align: center;
+}
+
+td {
+	position: relative;	
+}
+
+.inputBtn{
+	border: 0;
+	color: white;
+	background: #3E60A3;
+	height: 40px;
+	width: 60px;
+	margin-right: 27px;
+	cursor: pointer;
+	font-weight: 1000;
+	font-size: 15px;
+	outline: none;
+}
+
 #footer{
 	width: 1000px;
     height: 200px;
     margin-left: 235px;
 }
-
 .banner {
 	position: relative;
 	display: inline-block;
@@ -108,46 +166,3 @@ body{
 .banner:hover span.text {display:block;}
 .banner:hover::before {width:95%;}
 .banner:hover::after {height:70%;}
-h3{
-    text-align: center;
-    margin-top: 30px;
-}
-h4{
-	text-align: right;
-	margin-right: 319px;
-}
-
-
-#timer{
-	text-align: right;
-	margin-right: 322px; 
-}
-
-table{
-	height: 47vh;
-    width: 90%; 
-}
-
-tr{
-	text-align: center;
-}
-
-.subBtn{
-	display: flex;
-	justify-content: right;
-	margin-top: 52px;
-	margin-right: 295px;
-}
-
-.inputBtn{
-	border: 0;
-	color: white;
-	background: #3E60A3;
-	height: 40px;
-	width: 60px;
-	margin-right: 27px;
-	cursor: pointer;
-	font-weight: 1000;
-	font-size: 15px;
-	outline: none;
-}
