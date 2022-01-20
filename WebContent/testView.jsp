@@ -41,7 +41,7 @@ request.setCharacterEncoding("utf-8");
 </head>
 <body>
 	<div id="header">
-		<h3 id="">[
+		<h3 id="Subject">[
 		<%if(list.get(0).getSubno()==1){ %>
 			강아지 문제
 		<%}else{ %>
@@ -49,6 +49,7 @@ request.setCharacterEncoding("utf-8");
 		<%} %>
 		]</h3> 
 	</div>
+	<form action="result.jsp" method="post" onsubmit="return fnSubmit()" onreset="return fnReset()" name="sheet" >
 	<div id="MainWrapper">
 		<div id="main">
 			<div id="mainLeft">
@@ -76,14 +77,11 @@ request.setCharacterEncoding("utf-8");
 			</div>
 	</div>
 	<div id="aside">
-		<div id="timer">60분 0초</div>
-		<div class="username">수험자:<%=userDto.getName() %></div>
-		<div class="subBtn">
-			<input type="submit" value="제출" class="inputBtn">
-			<br>
-			<input type="reset" value="초기화" class="inputBtn">
+		<div id="ExtraWrapper">
+			<div id="TimerWrapper">⏱️<span id="timer">60분0초</span></div>
+			<div class="username">수험자:<%=userDto.getName() %></div>
 		</div>
-		<form action="result.jsp" method="post" onsubmit="return fnSubmit()" onreset="return fnReset()" name="sheet" id="omr_form">
+		<div id="omr_form">
 			<table>
 				<tr align="center">
 					<td colspan="5">OMR</td>
@@ -98,9 +96,16 @@ request.setCharacterEncoding("utf-8");
 				</tr>
 				<%}%>
 			</table>
-		</form>
+			</div>
+			<div class="subBtn">
+				<input type="reset" value="초기화" class="btnReset">
+				<br>
+				<input type="submit" value="제출" class="btnSubmit">
+			</div>
+		
 		</div>
 	</div>
+	</form>
 	
 	
 	
