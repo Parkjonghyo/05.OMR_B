@@ -79,7 +79,7 @@ request.setCharacterEncoding("utf-8");
 	<div id="aside">
 		<div id="ExtraWrapper">
 			<div id="TimerWrapper">⏱️<span id="timer">60분0초</span></div>
-			<div class="username">수험자:<%=userDto.getName() %></div>
+			<div class="username">응시자:<%=userDto.getName() %></div>
 		</div>
 		<div id="omr_form">
 			<table>

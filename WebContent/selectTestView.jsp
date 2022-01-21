@@ -22,6 +22,11 @@ if(dto == null){
 	// 위의 href 경로는 알아서 맞춰주시길.
 }
 %>
+<style>
+body{
+background: #E8EDF2;	
+}
+</style>
 </head>
 <body>
 <div class="container">
