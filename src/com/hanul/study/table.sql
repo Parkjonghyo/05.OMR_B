@@ -42,7 +42,7 @@ VALUES(Test_seq.NEXTVAL,
 );
 INSERT INTO test_b          
 VALUES(Test_seq.NEXTVAL,
-'다음 중 강아지와 침대에서 같이 잘 때의 장점이 아닌 것은?',
+'다음 중 강아지와 같이 잘 때의 장점이 아닌 것은?',
 '2',
 '1',
 '주인 곁에 붙어서 자면서 체온 유지 가능',
@@ -102,7 +102,7 @@ VALUES(Test_seq.NEXTVAL,
 );
 INSERT INTO test_b          
 VALUES(Test_seq.NEXTVAL,
-'진돗개가 경찰견이 될 수 없었던 이유 첫번째 충성심 두번째는 이것',
+'진돗개가 경찰견이 될 수 없었던 이유 첫번째는 충성심인데 두번째는 무엇?',
 '1',
 '1',
 '지능',
@@ -112,7 +112,7 @@ VALUES(Test_seq.NEXTVAL,
 );
 INSERT INTO test_b          
 VALUES(Test_seq.NEXTVAL,
-'주인의 몸에 물이 묻었을 때 반려견이 핥는 이유',
+'주인의 몸에 물이 묻었을 때 반려견이 핥는 이유는?',
 '3',
 '1',
 '목이 말라서',
@@ -203,7 +203,7 @@ VALUES(Test_seq.NEXTVAL,
 );
 INSERT INTO test_b          
 VALUES(Test_seq.NEXTVAL,
-'고양이 눈이 어둠속에서 빛이나는 이유는?',
+'고양이 눈이 어둠 속에서 빛이나는 이유는?',
 '4',
 '2',
 '고양이의 눈에는 플래시처럼 빛을 내는 기관이 따로 있다',
@@ -223,7 +223,7 @@ VALUES(Test_seq.NEXTVAL,
 );
 INSERT INTO test_b          
 VALUES(Test_seq.NEXTVAL,
-'4. 개 고양이의 공통점으로 맞은것은?',
+'개 고양이의 공통점으로 알맞은 것은?',
 '3',
 '2',
 '두 동물 모두 발톱을 감출 수 있다',

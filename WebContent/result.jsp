@@ -11,7 +11,7 @@ String tempVal = "";
 // 날아온 정답들 전부 받아낸다!!!!
 for(int i = 0; i < tests.size(); i++) {
 	tempVal = request.getParameter("chose"+i+"_omr");
-	answers.add(tempVal == null ? "미풀이" : tempVal);
+	answers.add(tempVal == null ? "없음" : tempVal);
 }
 
 // 테스트 코드(받은 정답 & 테스트의 정답)

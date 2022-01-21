@@ -8,7 +8,9 @@ request.setCharacterEncoding("utf-8");
 ArrayList<Boolean> isCorrList = (ArrayList<Boolean>) request.getAttribute("isCorrList");
 ArrayList<TestDTO> tests = (ArrayList<TestDTO>) session.getAttribute("tests");
 ArrayList<String> answers = (ArrayList<String>) request.getAttribute("answers");
-System.out.println(answers.get(0));
+
+int subNo = tests.get(0).getSubno();
+
 TesterDTO dto = (TesterDTO) session.getAttribute("currUserData");
 %>
 <!DOCTYPE html>
@@ -20,6 +22,8 @@ TesterDTO dto = (TesterDTO) session.getAttribute("currUserData");
 <script src="https://code.jquery.com/jquery-3.6.0.js"
 	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 	crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="./css/resultView.css" />
+<link rel="stylesheet" type="text/css" href="./css/coolButton.css" />
 <%
 //만약 유저가 로그인되어있지 않다면 login페이지로 가도록
 if(dto == null){
@@ -30,13 +34,13 @@ if(dto == null){
 %>
 </head>
 <body>
-<h1>시험 결과</h1>
-<h3><%=dto.getName() %></h3>
-<table border="1">
+<h1><%= subNo == 1 ? "강아지 부문" : "고양이 부문" %>시험 결과</h1>
+<h3>응시자: <%=dto.getName() %>님</h3>
+<table id="ResultTable">
 	<tr>
 		<th></th>
 		<%for (int i=0; i<tests.size(); i++) {%>
-		 <th><%=i+1 %></th><%} %>
+		 <th><%=i+1 %>번</th><%} %>
 	</tr>
 	<tr>
 	<th>정답</th>
@@ -60,19 +64,15 @@ if(dto == null){
 	}
 	%>
 	<tr align="center">
-	<td colspan="11">시험 결과 <% if(score >= 60) { %> 
-		합격 
-	<% } else { %>
-		불합격
-	<% } %>
-	<%-- <% if(score >= 60) { 
-		out.println("합격"); 
-	} else {
-		out.println("불합격");
-	}
-		%> --%> </td>
-	</tr>
-		 
+	<td colspan="11" id="CheckScore">시험 결과는 <%= score %>점으로, <b><%= (score >= 60) ? "👍합격" : "👎불합격" %></b>이십니다!
+	</td>
+	</tr> 
 </table>
+<footer>
+	<a href="selectTestView.jsp" class="btn-3d green">다른문제 풀러가기</a>
+	<a href="selectTest.jsp?subNo=<%= subNo %>" class="btn-3d cyan">처음부터 다시풀기</a>
+</footer>
+<%-- <button type="button" onclick="location.href='selectTestView.jsp'" >다른문제 풀러가기</button>
+<button type="button" onclick="location.href='selectTest.jsp?subNo=<%= subNo %>'">같은문제 다시풀기</button> --%>
 </body>
 </html>

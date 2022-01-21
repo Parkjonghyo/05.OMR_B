@@ -1,0 +1,40 @@
+@charset "UTF-8";
+body {
+	display:flex;
+	align-items: center;
+	flex-direction: column;
+	background: #E8EDF2;
+}
+
+
+#ResultTable {
+	width: 70%;
+	min-width: 720px; 
+	background-color:#555555;
+}
+
+tr {
+	text-align: center;
+	height: 50px;
+}
+
+td, th {
+	background-color: #fff;
+}
+
+tr > td {
+	width: calc(7vw - 12px);
+	min-width: 60.8px;
+}
+
+tr > th:nth-child(1) {
+	background-color: #efefab;
+	min-width: 120px;
+	width: 120px;
+	text-align: left; 
+	padding-left: 12px;
+}
+
+#CheckScore {
+	font-size: 1.2rem;
+}
